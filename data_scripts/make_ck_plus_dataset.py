@@ -11,8 +11,6 @@ import skimage.color
 import skimage.io
 import skimage.transform
 
-# from ifp_toolbox.faces import FaceDetector
-
 
 class CKPlusCondenser(object):
     def __init__(self, original_dataset_path, condensed_dataset_path):
