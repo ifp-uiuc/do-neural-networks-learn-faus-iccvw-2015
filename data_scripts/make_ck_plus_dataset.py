@@ -11,7 +11,7 @@ import skimage.color
 import skimage.io
 import skimage.transform
 
-from ifp_toolbox.faces import FaceDetector
+# from ifp_toolbox.faces import FaceDetector
 
 
 class CKPlusCondenser(object):
@@ -386,6 +386,41 @@ class CKPlusNumpyFileGenerator(object):
         numpy.save(os.path.join(path, 'y.npy'), y)
         numpy.save(os.path.join(path, 'subjs.npy'), subjs)
         numpy.save(os.path.join(path, 'folds.npy'), folds)
+
+
+class FaceDetector(object):
+    def __init__(self, scale_factor=1.3, min_neighbors=5,
+                 min_size_scalar=0.25, max_size_scalar=0.75):
+        module_path = os.path.dirname(__file__)
+        classifier_path = os.path.join(module_path,
+                                       'haarcascade_frontalface_default.xml')
+        self.detector = cv2.CascadeClassifier(classifier_path)
+        if self.detector.empty():
+            raise Exception('Classifier xml file was not found.')
+        self.scale_factor = scale_factor
+        self.min_neighbors = min_neighbors
+        self.min_size_scalar = min_size_scalar
+        self.max_size_scalar = max_size_scalar
+        # print self.detector
+
+    def detect_faces(self, I):
+        height, width, num_channels = I.shape
+        min_dim = numpy.min([height, width])
+        min_size = (int(min_dim*self.min_size_scalar),
+                    int(min_dim*self.min_size_scalar))
+        max_size = (int(min_dim*self.max_size_scalar),
+                    int(min_dim*self.max_size_scalar))
+
+        faces = self.detector.detectMultiScale(I, self.scale_factor,
+                                               self.min_neighbors, 0,
+                                               min_size,
+                                               max_size)
+        return faces
+
+    def crop_face_out(self, I, loc):
+        (x, y, w, h) = loc
+        I_crop = I[y:y+h, x:x+w, :]
+        return I_crop
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
