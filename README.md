@@ -9,7 +9,8 @@ Despite being the appearance-based classifier of choice in recent years, relativ
 ### Bibtex
 ```
 @article{khorrami2015deep,
-  title={Do Deep Neural Networks Learn Facial Action Units When Doing Expression Recognition?},
+  title={Do Deep Neural Networks Learn Facial Action Units When Doing
+         Expression Recognition?},
   author={Khorrami, Pooya and Paine, Tom Le and Huang, Thomas S},
   journal={arXiv preprint arXiv:1510.02969},
   year={2015}
