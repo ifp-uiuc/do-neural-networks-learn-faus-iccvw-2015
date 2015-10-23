@@ -27,6 +27,7 @@ if __name__ == "__main__":
     dataset_path = data_paths.ck_plus_data_path
 
     print 'Checkpoint directory: %s' % checkpoint_dir
+    print 'Testing on split %d\n' % fold
 
     # Load model
     model = SupervisedModel('evaluation', './')

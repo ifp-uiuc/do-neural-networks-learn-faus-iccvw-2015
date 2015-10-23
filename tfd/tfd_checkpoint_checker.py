@@ -27,7 +27,7 @@ if __name__ == "__main__":
     dataset_path = os.path.join(data_paths.tfd_data_path, 'split_'+str(fold))
 
     print 'Checkpoint directory: %s' % checkpoint_dir
-    print 'Testing on split %d' % fold
+    print 'Testing on split %d\n' % fold
 
     # Load model
     model = SupervisedModel('evaluation', './')
