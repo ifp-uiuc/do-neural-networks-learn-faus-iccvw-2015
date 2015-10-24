@@ -36,7 +36,7 @@ to run and evaluate the experiments.
 In order to run our experiments, you will need the following software:
 + Python 2.7 (preferably the [anaconda][anaconda] distribution)
 + [numpy] - a standard numerical computing library for python
-+ [anna] - our neural network library, which itself depends on theano and pylearn2
++ [anna] - our neural network library, which itself depends on [theano] and [pylearn2]
 + [OpenCV] - common open source computer vision library (needed for face detection)
 + [cudnn] - a GPU-accelerated library of primitives for deep neural networks
 
@@ -44,6 +44,8 @@ In order to run our experiments, you will need the following software:
 [anaconda]:https://www.continuum.io/why-anaconda
 [numpy]:http://www.numpy.org/
 [anna]:https://github.com/ifp-uiuc/anna
+[theano]:http://deeplearning.net/software/theano/
+[pylearn2]:http://deeplearning.net/software/pylearn2/
 [OpenCV]:http://opencv.org/
 [cudnn]:https://developer.nvidia.com/cudnn
 
