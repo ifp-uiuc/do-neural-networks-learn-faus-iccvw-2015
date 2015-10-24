@@ -25,7 +25,7 @@ The experiments are broken up by dataset:
 + ck_plus_six_class
 + tfd
 
-The difference between ``ck_plus`` and ``ck_plus_six_class`` is the ``ck_plus_six_class`` model evaluates our model's performance on the six basic emotions (anger, disgust, fear, happy, sad, surprise) while ``ck_plus`` 
+The difference between ``ck_plus`` and ``ck_plus_six_class`` is the ``ck_plus_six_class`` folder evaluates our model's performance on the six basic emotions (anger, disgust, fear, happy, sad, surprise) while the ``ck_plus`` folder
 contains the basic six along with neutral and contempt.
 
 The ``README.md`` file in each folder will provide more information on how
@@ -33,4 +33,17 @@ to run and evaluate the experiments.
 
 ## Requisite Libraries
 
-In order to run our experiments, you will need the following software
+In order to run our experiments, you will need the following software:
++ Python 2.7 (preferably the [anaconda][anaconda] distribution)
++ [numpy] - a standard numerical computing library for python
++ [anna] - our neural network library, which itself depends on theano and pylearn2
++ [OpenCV] - common open source computer vision library (needed for face detection)
++ [cudnn] - a GPU-accelerated library of primitives for deep neural networks
+
+
+[anaconda]:https://www.continuum.io/why-anaconda
+[numpy]:http://www.numpy.org/
+[anna]:https://github.com/ifp-uiuc/anna
+[OpenCV]:http://opencv.org/
+[cudnn]:https://developer.nvidia.com/cudnn
+
