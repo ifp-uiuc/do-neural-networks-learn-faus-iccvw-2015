@@ -1,5 +1,5 @@
 # Do Deep Neural Networks Learn Facial Action Units When Doing Expression Recognition?
-Experiment files for the paper "Do Deep Neural Networks Learn Facial Action Units When Doing Expression Recognition?", available here: http://arxiv.org/abs/1510.02969
+This repository contains all of experiment files for the paper "Do Deep Neural Networks Learn Facial Action Units When Doing Expression Recognition?", available here: http://arxiv.org/abs/1510.02969
 
 ![faus_frontpage](./faus_frontpage.png)
 
@@ -17,4 +17,20 @@ Despite being the appearance-based classifier of choice in recent years, relativ
 }
 ```
 
+## About the repo
 
+The experiments are broken up by dataset:
+
++ ck_plus 
++ ck_plus_six_class
++ tfd
+
+The difference between ``ck_plus`` and ``ck_plus_six_class`` is the ``ck_plus_six_class`` model evaluates our model's performance on the six basic emotions (anger, disgust, fear, happy, sad, surprise) while ``ck_plus`` 
+contains the basic six along with neutral and contempt.
+
+The ``README.md`` file in each folder will provide more information on how
+to run and evaluate the experiments.
+
+## Requisite Libraries
+
+In order to run our experiments, you will need the following software
