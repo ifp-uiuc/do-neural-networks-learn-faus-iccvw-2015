@@ -3,13 +3,11 @@
 # Contents
 + [Introduction](#introduction)
 + [Folder contents](#folder-contents)
-+ [Running experiment](#running-experiment)
++ [Running experiments](#running-experiments)
 
 # Introduction
 
-This folder contains some of the code used to obtain our results on the [CK+][CK+] dataset. However, instead of training and 
-evaluating on all eight expression classes. This model only deals with the six basic emotions: (anger, disgust, fear,
-happy, sad, and surprise). Our experiment uses both data augmentation and dropout as forms of regularization.
+This folder contains some of the code used to obtain our results on the [CK+][CK+] dataset. However, instead of training and evaluating on all eight expression classes, this model only deals with the **six** basic emotions: (anger, disgust, fear, happy, sad, and surprise). Our experiment uses both data augmentation and dropout as forms of regularization.
 
 We will first describe the contents of this folder, and then walk you through
 how to run the experiments.
