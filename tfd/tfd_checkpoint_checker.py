@@ -24,7 +24,7 @@ if __name__ == "__main__":
 
     checkpoint_dir = args.checkpoint_dir
     fold = int(args.split)
-    dataset_path = os.path.join(data_paths.tfd_data_path, 'split_'+str(fold))
+    dataset_path = os.path.join(data_paths.tfd_data_path, 'npy_files/TFD_96/split_'+str(fold))
 
     print 'Checkpoint directory: %s' % checkpoint_dir
     print 'Testing on split %d\n' % fold
