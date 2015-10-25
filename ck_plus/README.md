@@ -69,7 +69,7 @@ python -u train.py --split 0  \
 >& log0.txt & 
 ```
 
-Since the [CK+][CK+] dataset is typically broken into splits and their results average,
+Since the [CK+][CK+] dataset is typically broken into splits and their results averaged,
 the `--split` option indicates which of the 10 splits to use (0-9) when training. The code 
 will save the `.pkl` file containing the network parameters to a directory called `./checkpoints_0/` 
 which will denote the split used.
@@ -85,8 +85,8 @@ example. Simply run the following command:
 ``` shell
 # Snippet: cnn checkpoint evaluation
 $ THEANO_FLAGS='floatX=float32,device=gpu0,nvcc.fastmath=True' \ 
-python -u checkpoint_checker.py --split 0 ./cnn/checkpoints_0/ \
-> cnn_best_performance_split_0.txt &
+python -u ck_plus_checkpoint_checker.py --split 0 ./cnn/checkpoints_0/ \
+>& cnn_best_performance_split_0.txt &
 ```
 
 With this command, `ck_plus_checkpoint_checker.py` will iterate over the list of
