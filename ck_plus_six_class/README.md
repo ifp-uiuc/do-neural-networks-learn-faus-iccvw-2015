@@ -45,7 +45,7 @@ This contains the CNN model used that is loaded by the ``train.py`` file.
 
 ## CNN Training
 
-You are now ready the CNN.  
+You are now ready to train the CNN.  
 
 You can train the cnn with following command: 
 ``` shell
