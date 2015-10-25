@@ -46,7 +46,7 @@ model._compile()
 # Loading TFD dataset
 print('Loading Data')
 supervised_data_loader = SupervisedDataLoader(
-    os.path.join(data_paths.tfd_data_path, 'npy_files/TFD_96/split_'+str(train_split))
+    os.path.join(data_paths.tfd_data_path, 'npy_files/TFD_96/split_'+str(train_split)))
 train_data_container = supervised_data_loader.load(0)
 val_data_container = supervised_data_loader.load(1)
 test_data_container = supervised_data_loader.load(2)
