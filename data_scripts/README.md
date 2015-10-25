@@ -52,7 +52,7 @@ npy_files/
 The images and the labels are stored in ``X.npy`` and ``y.npy`` respectively, while ``subjs.npy`` denotes 
 the subject id of each person in the images and ``folds.npy`` says which image belongs to which fold (0-9).
 
-Now, all you need to do is open the ``data_paths.py`` files in the ``ck_plus`` and ``ck_plus_six_class`` directories of this respository, and set them to the absolute path of ``CK_PLUS_HERE``.
+Now, all you need to do is open the ``data_paths.py`` files in the ``ck_plus`` and ``ck_plus_six_class`` directories of this respository, and set them to the absolute path of the ``./CK_PLUS_HERE/npy_files/`` folder.
 
 Congratulations! You are now ready to run our CNNs on the CK+ dataset!
 
@@ -104,7 +104,7 @@ npy_files
 ```
 
 Now, all you need to do is open the ``data_paths.py`` files in the ``tfd`` directory of this respository, 
-and set it to the absolute path of ``TFD_HERE``.
+and set it to the absolute path of the ``TFD_HERE``. folder
 
 Congratulations! You are now ready to run our CNNs on the TFD dataset!
 
