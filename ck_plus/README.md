@@ -46,7 +46,7 @@ This file contains a single variable (``ck_plus_data_path``) which indicates the
 created when running the ``make_ck_plus_dataset.py`` file.
 
 #### `model.py`
-This contains the CNN model used that is loaded by each of the ``train.py`` files in each of our experiments.
+This contains the CNN model used by the ``train.py`` files in each of our experiments.
 
 
 # Running experiments
