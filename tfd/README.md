@@ -46,7 +46,7 @@ This file contains a single variable (``tfd_plus_data_path``) which indicates th
 created when running the ``make_tfd_plus_dataset.py`` file.
 
 #### `model.py`
-This contains the CNN model used that by the ``train.py`` files in each of our experiments.
+This file contains the CNN model used that by the ``train.py`` files in each of our experiments.
 
 
 # Running experiments
