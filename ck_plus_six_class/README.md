@@ -38,7 +38,7 @@ This file contains a single variable (``ck_plus_six_class_data_path``) which ind
 created when running the ``make_ck_plus_dataset.py`` file.
 
 #### `model.py`
-This contains the CNN model used that is loaded by the ``train.py`` file.
+This file contains the CNN model used that is loaded by the ``train.py`` file.
 
 
 # Running experiments
@@ -56,7 +56,8 @@ python -u train.py --split 0  \
 ```
 
 Since the [CK+][CK+] dataset is typically broken into splits and their results averaged,
-the `--split` option indicates which of the 10 splits to use (0-9) when training. The code 
+the `--split` option indicates which of the 10 splits (0-9) will be used for testing. For example,
+the command above will train the network on splits 1-9 and evaluate the results on split 0. The code 
 will save the `.pkl` file containing the network parameters to a directory called `./checkpoints_0/` 
 which will denote the split used.
 
@@ -77,7 +78,8 @@ With this command, `ck_plus_checkpoint_checker.py` will iterate over the list of
 checkpoints found in `./cnn_ad/checkpoints_0/` and compute the accuracy on 
 the test set. It will then select the checkpoint that yielded the highest
 accuracy. The command also writes all of the results to a text file called 
-`cnn_ad_best_performance_split_0.txt`. 
+`cnn_ad_best_performance_split_0.txt`. Please remember that the `--split`
+argument indicates which split is being used for test/evaluation.
 
 
 [CK+]:http://www.pitt.edu/~emotion/ck-spread.htm
