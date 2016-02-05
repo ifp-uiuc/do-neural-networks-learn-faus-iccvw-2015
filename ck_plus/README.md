@@ -94,7 +94,7 @@ With this command, `ck_plus_checkpoint_checker.py` will iterate over the list of
 checkpoints found in `./cnn/checkpoints_0/` and compute the accuracy on 
 the test set. It will then select the checkpoint that yielded the highest
 accuracy. The command also writes all of the results to a text file called 
-`cnn_best_performance_split_0.txt`. Please remember, the '--split' argument
+`cnn_best_performance_split_0.txt`. Please remember, the `--split` argument
 indicates which fold is being used as test/evaluation set.
 
 ### How to train the rest of the cnns
