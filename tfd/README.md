@@ -39,7 +39,7 @@ This file contains a script that outputs the performance of a single save checkp
 
 #### `tfd_plus_checkpoint_checker.py`
 This file contains a script that examines all the checkpoints created by a 
-single experiment, and chooses the best one.
+single experiment, and chooses the best one based on overall accuarcy on validation set.
 
 #### `data_paths.py`
 This file contains a single variable (``tfd_plus_data_path``) which indicates the path to load the TFD ``.npy`` files 
@@ -91,7 +91,7 @@ python -u tfd_plus_checkpoint_checker.py --split 0 ./cnn/checkpoints_0/ \
 
 With this command, `tfd_plus_checkpoint_checker.py` will iterate over the list of
 checkpoints found in `./cnn/checkpoints_0/` and compute the accuracy on 
-the test set. It will then select the checkpoint that yielded the highest
+the validation set. It will then select the checkpoint that yielded the highest
 accuracy. The command also writes all of the results to a text file called 
 `cnn_best_performance_split_0.txt`. 
 

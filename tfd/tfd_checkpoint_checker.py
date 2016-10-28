@@ -34,20 +34,20 @@ if __name__ == "__main__":
 
     # Load data
     supervised_data_loader = SupervisedDataLoader(dataset_path)
-    test_data_container = supervised_data_loader.load(2)
-    test_data_container.X = numpy.float32(test_data_container.X)
-    test_data_container.X /= 255.0
-    test_data_container.X *= 2.0
+    val_data_container = supervised_data_loader.load(1)
+    val_data_container.X = numpy.float32(val_data_container.X)
+    val_data_container.X /= 255.0
+    val_data_container.X *= 2.0
 
     # Construct evaluator
     preprocessor = [util.Normer3(filter_size=5, num_channels=1)]
 
     checkpoint_file_list = sorted(
         glob.glob(os.path.join(checkpoint_dir, '*.pkl')))
-    evaluator = util.Evaluator(model, test_data_container,
+    evaluator = util.Evaluator(model, val_data_container,
                                checkpoint_file_list[0], preprocessor)
 
-    # For each checkpoint, compute the overall test accuracy
+    # For each checkpoint, compute the overall val accuracy
     accuracies = []
     for checkpoint in checkpoint_file_list:
         print 'Checkpoint: %s' % os.path.split(checkpoint)[1]
