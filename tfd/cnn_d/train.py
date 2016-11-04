@@ -71,10 +71,10 @@ X_test /= 255.0
 X_test *= 2.0
 
 train_dataset = supervised_dataset.SupervisedDataset(X_train, y_train)
-test_dataset = supervised_dataset.SupervisedDataset(X_test, y_test)
+val_dataset = supervised_dataset.SupervisedDataset(X_val, y_val)
 train_iterator = train_dataset.iterator(
     mode='random_uniform', batch_size=64, num_batches=31000)
-test_iterator = test_dataset.iterator(
+val_iterator = val_dataset.iterator(
     mode='random_uniform', batch_size=64, num_batches=31000)
 
 # Create object to local contrast normalize a batch.
@@ -92,7 +92,7 @@ for x_batch, y_batch in train_iterator:
 
     if monitor.test:
         monitor.start()
-        x_test_batch, y_test_batch = test_iterator.next()
-        x_test_batch = preprocessor.run(x_test_batch)
-        test_accuracy = model.eval(x_test_batch, y_test_batch)
-        monitor.stop_test(1-test_accuracy)
+        x_val_batch, y_val_batch = val_iterator.next()
+        x_val_batch = preprocessor.run(x_val_batch)
+        val_accuracy = model.eval(x_val_batch, y_val_batch)
+        monitor.stop_test(1-val_accuracy)
