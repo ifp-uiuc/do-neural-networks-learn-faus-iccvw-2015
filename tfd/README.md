@@ -91,7 +91,7 @@ python -u tfd_plus_checkpoint_checker.py --split 0 ./cnn/checkpoints_0/ \
 
 With this command, `tfd_plus_checkpoint_checker.py` will iterate over the list of
 checkpoints found in `./cnn/checkpoints_0/` and compute the accuracy on 
-the validation set. It will then select the checkpoint that yielded the highest
+the split's validation set. It will then select the checkpoint that yielded the highest
 accuracy. The command also writes all of the results to a text file called 
 `cnn_best_performance_split_0.txt`. 
 
