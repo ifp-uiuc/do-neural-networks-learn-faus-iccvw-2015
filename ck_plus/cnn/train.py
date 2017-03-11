@@ -19,6 +19,8 @@ parser = argparse.ArgumentParser(prog='train_cnn',
                                  neural network from random initialization.')
 parser.add_argument("-s", "--split", default='0', help='Testing split of CK+ \
                     to use. (0-9)')
+parser.add_argument("--checkpoint_dir", default='./', help='Location to save \
+                    model checkpoint files.')
 args = parser.parse_args()
 
 print('Start')
@@ -26,6 +28,9 @@ test_split = int(args.split)
 if test_split < 0 or test_split > 9:
     raise Exception("Testing Split must be in range 0-9.")
 print('Using CK+ testing split: {}'.format(test_split))
+
+checkpoint_dir = os.path.join(args.checkpoint_dir, 'checkpoints_'+str(test_split))
+print 'Checkpoint dir: ', checkpoint_dir
 
 pid = os.getpid()
 print('PID: {}'.format(pid))
@@ -36,7 +41,7 @@ f.close()
 # Load model
 model = SupervisedModel('experiment', './', learning_rate=1e-2)
 monitor = util.Monitor(model,
-                       checkpoint_directory='checkpoints_'+str(test_split),
+                       checkpoint_directory=checkpoint_dir,
                        save_steps=1000)
 
 # Loading CK+ dataset
