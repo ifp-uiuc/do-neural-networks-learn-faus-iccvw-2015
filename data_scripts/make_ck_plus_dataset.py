@@ -218,6 +218,7 @@ class CKPlusFaceCropper(object):
                                                    output_img_size)
             if not success_flag:
                 missed_faces.append(image_file_path)
+            I = numpy.squeeze(I, axis=2)
             skimage.io.imsave(os.path.join(image_file_path), I)
 
         print 'Missed Faces: ', sorted(missed_faces)
@@ -240,16 +241,18 @@ class CKPlusFaceCropper(object):
 
             # Detect face and crop it out
             I_crop, success_flag = self.detect_crop_face(I)
+            #print I_crop.dtype, I_crop.min(), I_crop.max()
 
             # If face was successfully detected.
             # Align face in 96x96 image
             if success_flag:
-                    I_out = I_crop
-                    I_out = skimage.transform.resize(I_out, (96, 96))
+                I_out = I_crop
+                I_out = numpy.uint8(skimage.transform.resize(I_out, (96, 96), preserve_range=True))
+                #print I_out.dtype, I_out.min(), I_out.max()
             else:
                 I_out = I_crop
 
-            return I_out[:, :, numpy.newaxis], success_flag
+            return I_out, success_flag
 
     def detect_crop_face(self, I):
         success_flag = False
